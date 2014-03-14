@@ -1,8 +1,7 @@
-package chatvader.pkg0;
+package GGbot.pkg0;
 
 
-import static chatvader.pkg0.bot.a;
-import java.util.*;
+import static GGbot.pkg0.bot.a;
 public class bot {
     // Each variable is set at 1, then each time a method is called the variable 
     // increases by 1. When the variable reaches max, it is reset to 1;
@@ -28,9 +27,9 @@ public class bot {
 			return	Where(input);
 		else if(input.contains("how"))
 			return How(input);
-		else if(input.contains("what")|input.startsWith("wat"))
+		else if(input.contains("what"))
 			return What(input);
-		else if(input.contains("why")|input.startsWith("y "))
+		else if(input.contains("why"))
 			return Why(input);
 		else if(input.contains("when"))
 			return When(input);
@@ -69,19 +68,23 @@ private static  String Hi(String input){
 		switch (Hii) {
             case 1:  part1 = "Hello, Summoner ";
                 break;
-            case 2:  part1 = "Greetings, Summoner";
+            case 2:  part1 = "Greetings, Summoner ";
             break;}
        
         if(input.contains("where"))
 			part2=	Where(input);
 		else if(input.contains("how"))
 			part2= How(input);
-		else if(input.contains("what")|input.startsWith("wat"))
+		else if(input.contains("what"))
 			part2= What(input);
-		else if(input.contains("why")|input.startsWith("y "))
+		else if(input.contains("why"))
 			part2= Why(input);
 		else if(input.contains("when"))
 			part2= When(input);
+                else if(input.contains("def"))
+			part2= What(input);
+                else if(input.contains("who"))
+			part2= Who(input);
 		else if(input.contains("?"))
 			part2= Question(input);
                 else if(test(input,Synonym.thank))
@@ -173,9 +176,9 @@ private static String When(String input){
 private static String Question(String input){
 		boolean x=true;
   
-  for(int i =0; i < Library.howdef.length; i++)
-  {  if(input.contains(Library.howdef[i][0]))
-    { a=Library.howdef[i][1] ;
+  for(int i =0; i < Library.whatdef.length; i++)
+  {  if(input.contains(Library.whatdef[i][0]))
+    { a=Library.whatdef[i][1] ;
         x= false;}
         }
          
@@ -189,32 +192,21 @@ private static String Question(String input){
 private static String generic(String input){
 
 	if (n==10){n=1;}
-        
-        boolean x=true;
-                        
-    for(int i =0; i < Library.whatdef.length; i++)
-    {
-        if(input.contains(Library.whatdef[i][0]))
-        { a=Library.whatdef[i][1] ;
-         x= false;}
-        }
-         
-        if(x)
-         return generic(input);
-        else
-            
-            switch (n) {
-                case 1:  a = "I was not able to understand :s could you rephrase?";
+       else
+        { switch (n) {
+                
+           
+                case 1:  a = "Can I help you?";
                     break;
-                case 2:  a = "Good question";
+                case 2:  a = "Brb, I'll ask my creator";
                     break;
-                case 3:  a = "Can I help you?";
+                case 3:  a = "Do you want to hear a joke? Brand got banned for flaming";
                     break;
-                case 4:  a = "Brb, I'll ask my creator";
+                case 4:  a = "I am here to teach you how to play league";
                     break;
-                case 5:  a = "Do you want to hear a joke? Brand got banned for flaming";
+                case 5:  a = "Good question";
                     break;
-                case 6:  a = "I am here to teach you how to play league";
+                case 6:  a = "I was not able to understand :s could you rephrase?";
                     break;
                 case 7:  a = "If you already know the basics, you can ask me questions about how to support";
                     break;
@@ -225,7 +217,7 @@ private static String generic(String input){
                 
             }
             n++;
-            
+}
         return a;}
         
         
@@ -233,16 +225,17 @@ private static String More(){
              
              if (Mi==4)
                  Mi=1;
-             
-            switch(Mi){
+             else
+             { switch(Mi){
                 case 1: a="Great! what do you have on your mind?";
                     break;
                 case 2: a="Ask me anything";
                     break;
                 case 3: a="PLEASE REPORT FOR TOO MUCH QUESTIONS!.. jk :p  go ahead!";
             }
-            
+            Mi++;}
                     return a;
+                    
         } 
         
 
@@ -251,26 +244,41 @@ private static  String Welcome(){
             
              if (Wi==4)
                  Wi=1;
-             
-            switch(Wi){
+             else
+             {  switch(Wi){
                 case 1: a="You are welcome! Do you have any more questions?";
                 case 2: a="My pleasure! Do you need anything else?";
                 case 3: a="Glad I could help! Do you have any other questions?";
-            }
+            } Wi++;}
             return a;
         }
 private static String Bye(){
     
             if (byei==4)
                  byei=1;
-             
-            switch(Wi){
+             else
+            {switch(byei){
                 case 1: a="Bye! I hope to see you again soon.";
                 case 2: a="Glad i could help, Cya";
                 case 3: a="Good luck ! bye";
-            }
+            }byei++;}
             return a;
 }
+
+    private static String Who(String input) {
+        boolean x=true;
+  
+  for(int i =0; i < Library.whodef.length; i++)
+  {  if(input.contains(Library.whodef[i][0]))
+    { a=Library.whodef[i][1] ;
+        x= false;}
+        }
+         
+        if(x)
+         return generic(input);
+        else
+		return a;
+    }
 
     
 

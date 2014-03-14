@@ -4,21 +4,21 @@
  * and open the template in the editor.
  */
 
-package chatvader.pkg0;
+package GGbot.pkg0;
 
 /**
  *
  * @author salimbouassida
  */
 public class Synonym {
- static String[] hello={"hi","hello","sup","greet","ahoy","hey","yo ","what's up","good day","good mor","good eve"};
+ static String[] hello={"hi ","hello","sup","greet","ahoy","hey","yo ","good day","good mor","good eve"};
  static String[] bye={"bye","farewell","goodbye","good bye","see ya"};
- static String[] lol={"league of legends","league","lol"};
+ static String[] lol={"league of legend","league","lol"};
  static String[] thank={"thanks","thx","thank y","great help","thank"};
  static String[] insult={"fuck","suck","noob","bitc"};
  static String[] yes={"yep","yes","yeah"};
- static String[] no={"nop","no","nah"};
- static String[] other={"top","bruise","adc","mid","assa","ap ","jung","jang","ad ","mark"};
+ static String[] no={"nop ","no ","nah "};
+ 
  static String[] supp={"sup","suppor"};
  static String[] cs={"cs","creep"};
  static String[] gg={"gg","wp","good game","goodgame"};

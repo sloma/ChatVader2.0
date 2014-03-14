@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package chatvader.pkg0;
+package GGbot.pkg0;
 
 /**
  *
@@ -28,7 +28,7 @@ public class Library {
             + "\n\t-Never rage at your teammates"
             + "\n\t-Praise your teammates for their good work"
             + "\n\t-Learn from your mistakes";
-    static String lane="You goal in lane is:"
+    static String lanin="Your goal in lane is:"
             + "\n\t-Earn gold(get CS/Kills/Obejecites"
             + "\n\t-Deny gold to the enemy(by zoning/killing)"
             + "\n\t-Warn your allies when your eenemy is missing"
@@ -60,10 +60,36 @@ public class Library {
     static String whenbaron="You should avoid risky baron. when the enemy jungle is dead and you can tank it. Or when you are really ahead and want to force a fight"; 
     static String respawn="blue and red: 5min\n\t dragon: 6min\n\t baron: 7min";
     static String old="I am one week old today! should we celebrate?";
+    static String lasth="Last hitting means to kill a minnion at the last second.";
+    static String minion="Minions are small monsters that comes through the lanes. By killing them you get gold.";
+    static String lane="There are three lanes on the map Summoner Rift : top, mid and bot";
+    static String gank="Gank means that one or more players come to kill the enemy. A gank is said to be successful if the enemy dies or wasted his spells.";
+    static String spell="Each champion has 3 basic spells and one ultimate. You can improve those spells when you level up. In addition you have summoner spells that are general to all the champions (example flash)";
+    static String whengank="You should gank a lane when the enemy:\n-is low HP\n-wasted a spell with a long cooldown\n-did not ward his lane";
+    static String jungler="The jungler is here to help others lanes to get an advantage. When the jungler is not ganking, he is killing neutral monsters and keeping track of respawn times. There a different category of junglers";
+    static String role="There are currently 5 different roles in the current Meta: Top/Mid/jungler/Support/Marksman. My mainly explain the jungle Role here";
+    static String meta="The Meta is the dominant strategy at the moment";
+    static String tank="The tank is the person that builds as much HP and resistance(MR or armor) and 'tanks' as much dammage as possible for his team";
+    static String mr="MR means Magic resist";
+    static String hp="HP means Health";
+    static String bruiser="A bruiser is a tanky champion that can still deal a decent amount of dammage";
+    static String build="A Build is a set of items that you have";
+    static String category="There are a few categories of champions: assassins, tanks, mage, marksman, support, bruiser";
+    static String howbuild="You should chose your build according to the enemy's composition. For example if the enemy team has a lot of AD, then you should build armor";
+    static String ad=" AD means Attack Dammage. the dammage can be reduced by armor, on the other the dammage can be increased by armor penetration";
+    static String counter="each champion has a counter. You can find the list of counter on championselect.com";
+    static String range="range is the distance at which you can attack.";
+    static String lcs="The LCS is an 8-team league where teams will play 28 games";
+    static String season="Season one: Fnatic\n season two: TPA\n season three: SKT";
+    static String you="Good! thanks.";
+    static String champ="A champion is a character that you can play in the game. Each champion has a dominent role in the game.";
     
-    static String[][] whatdef={{"nexus",nexus},{"ward",ward},{"ward",ward},{"carry",carry},{"gg",gg},{"bg",bg},{"cs",csdef},
-        {"afk",afk},{"dc",dc},{"noob",noob},{"smurf",smurf},{"ign",ign},{"cc",cc},{"snowball",snowball},{"tp",tf},{"tf",tf},{"baro",baron}};
-    static String[][] howdef={{"old",old},{"win",carry},{"supp",supp},{"cs",csgoal},{"carry",carry},{"get",carry},{"better",better},{"lose",howlose}};
-    static String[][] whendef={{"push",push},{"reset",reset},{"world",world},{"baron",whenbaron},{"respaw",respawn},{"born",old}};
-            
+    
+    
+    static String[][] whatdef={{"champ",champ},{"bruise",bruiser},{"lcs",lcs},{"ad",ad},{"catego",category},{"tank",tank},{"counter",counter},{"minio",minion},{"meta",meta},{"nexus",nexus},{"role",role},
+        {"ward",ward},{"spell",spell},{"league",lol},{"lol",lol},{"jungl",jungler},{"gan",gank},{"ward",ward},{"carry",carry},{"gg",gg},{"bg",bg},{"cs",csdef},
+        {"afk",afk},{"dc",dc},{"mr",mr},{"hp",hp},{"last h",lasth},{"lane",lane},{"noob",noob},{"smurf",smurf},{"ign",ign},{"cc",cc},{"snowball",snowball},{"tp",tf},{"tf",tf},{"baro",baron}};
+    static String[][] howdef={{"old",old},{"are you",you},{"jungl",jungler},{"counter",counter},{"build",howbuild},{"win",carry},{"supp",supp},{"cs",csgoal},{"gan",gank},{"carry",carry},{"lan",lanin},{"get",carry},{"better",better},{"lose",howlose}};
+    static String[][] whendef={{"push",push},{"gan",whengank},{"reset",reset},{"world",world},{"baron",whenbaron},{"respaw",respawn},{"born",old}};
+    static String[][] whodef={{"counter",counter},{"season",season}};
             }

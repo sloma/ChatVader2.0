@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 
-package chatvader.pkg0;
+package GGbot.pkg0;
 
 /**
  *
  * @author salimbouassida
  */
-public class NewClass {
+public class Mainclass {
     public static void main (String arg[]){
         
-        new NewJFrame().setVisible(true);
+        new GUI().setVisible(true);
  
 
 

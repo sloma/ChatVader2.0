@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package chatvader.pkg0;
+package GGbot.pkg0;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -19,14 +19,14 @@ import javax.swing.text.StyledDocument;
  * @author salimbouassida
  */
 
-public class NewJFrame extends javax.swing.JFrame {
+public class GUI extends javax.swing.JFrame {
 
     
     private String output;
     private int count=0;
     private String input;
 
-    public NewJFrame() {
+    public GUI() {
         
         initComponents();
        
@@ -36,29 +36,47 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextArea1 = new javax.swing.JTextArea();
+        Tittle = new javax.swing.JTextArea();
+        infobox = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         chatbox = new javax.swing.JTextPane();
         inputbox = new javax.swing.JTextField();
         send = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monaco", 0, 12)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Welcome to GG.Bot\nFeel free to ask me any question \nabout league of legends. Or on how\nto support.");
-        jTextArea1.setBorder(null);
-        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 240, 120));
+        Tittle.setEditable(false);
+        Tittle.setColumns(20);
+        Tittle.setFont(new java.awt.Font("Lucida Grande", 1, 48)); // NOI18N
+        Tittle.setRows(5);
+        Tittle.setText("GG.bot");
+        Tittle.setAutoscrolls(false);
+        Tittle.setFocusTraversalKeysEnabled(false);
+        Tittle.setFocusable(false);
+        Tittle.setRequestFocusEnabled(false);
+        jPanel1.add(Tittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 180, 70));
+
+        infobox.setColumns(20);
+        infobox.setFont(new java.awt.Font("STHeiti", 1, 14)); // NOI18N
+        infobox.setLineWrap(true);
+        infobox.setRows(5);
+        infobox.setText(" \n Welcome to GG.Bot !\n\n Feel free to ask me any question \n regarding league of legends \n and the role of jungler.\n \n If you do not understand a word\n you can ask for the definition.");
+        infobox.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 102)));
+        jPanel1.add(infobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 240, 150));
+
+        jScrollPane3.setOpaque(false);
 
         chatbox.setEditable(false);
+        chatbox.setInheritsPopupMenu(true);
+        chatbox.setOpaque(false);
         jScrollPane3.setViewportView(chatbox);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 660, 340));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 660, 350));
 
         inputbox.setToolTipText("Enter Your message for Darth Vader");
         inputbox.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -66,7 +84,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 enter(evt);
             }
         });
-        jPanel1.add(inputbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 670, 70));
+        jPanel1.add(inputbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 670, 70));
 
         send.setText("Send");
         send.addActionListener(new java.awt.event.ActionListener() {
@@ -76,11 +94,12 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 510, 130, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chatvader/pkg0/test2.png"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(500, 500));
-        jLabel1.setMinimumSize(new java.awt.Dimension(500, 500));
-        jLabel1.setPreferredSize(new java.awt.Dimension(500, 500));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 610));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GGbot/pkg0/Background.png"))); // NOI18N
+        background.setMaximumSize(new java.awt.Dimension(500, 500));
+        background.setMinimumSize(new java.awt.Dimension(500, 500));
+        background.setPreferredSize(new java.awt.Dimension(500, 500));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 610));
+        jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 80, 120));
 
         getContentPane().add(jPanel1);
 
@@ -96,7 +115,8 @@ public class NewJFrame extends javax.swing.JFrame {
                System.out.print("Error22");}
          
         inputbox.setText("");
-        inputbox.requestFocus();        
+        inputbox.requestFocus(); 
+        
 
                    }//GEN-LAST:event_sendActionPerformed
 
@@ -161,13 +181,13 @@ catch(Exception e) { System.out.println(e); }
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         
@@ -176,7 +196,7 @@ catch(Exception e) { System.out.println(e); }
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                new NewJFrame().setVisible(true);
+                new GUI().setVisible(true);
                 
             }
         });
@@ -184,12 +204,14 @@ catch(Exception e) { System.out.println(e); }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Tittle;
+    private javax.swing.JLabel background;
     private javax.swing.JTextPane chatbox;
+    private javax.swing.JTextArea infobox;
     private javax.swing.JTextField inputbox;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton send;
     // End of variables declaration//GEN-END:variables
 }
