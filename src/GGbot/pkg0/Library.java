@@ -29,9 +29,9 @@ public class Library {
             + "\n\t-Praise your teammates for their good work"
             + "\n\t-Learn from your mistakes";
     static String lanin="Your goal in lane is:"
-            + "\n\t-Earn gold(get CS/Kills/Obejecites"
+            + "\n\t-Earn gold(get CS/Kills/Objectives"
             + "\n\t-Deny gold to the enemy(by zoning/killing)"
-            + "\n\t-Warn your allies when your eenemy is missing"
+            + "\n\t-Warn your allies when your enemy is missing"
             + "\n\t-Avoid dying by warding your lane and playing carefully when enemies are missing";
     static String ward="A ward is an item that you can place on the ground and that allows you to see an area. Trinkets last 120 min, "
             + "Green wards last 180 min, and Pink wards last until the enemy kill them";
@@ -46,7 +46,7 @@ public class Library {
     static String noob="noob Comes from newbie, meanning new player";
     static String smurf="Smurfs are alternative accounts";
     static String ign="IGN means In Game Name, which is your username";
-    static String cc="CC means Croud Control, such as stuns, slows, fears, etc";
+    static String cc="CC means Crowd Control, such as stuns, slows, fears, etc";
     static String snowball="Snowball is when you get a good start and that you capitalize on it.";
     static String tp="TP means teleport.";
     static String tf="TF means team fight";
@@ -82,7 +82,7 @@ public class Library {
     static String lcs="The LCS is an 8-team league where teams will play 28 games";
     static String season="Season one: Fnatic\n season two: TPA\n season three: SKT";
     static String you="Good! thanks.";
-    static String champ="A champion is a character that you can play in the game. Each champion has a dominent role in the game.";
+    static String champ="A champion is a character that you can play in the game. Each champion has a dominant role in the game.";
     
     
     
