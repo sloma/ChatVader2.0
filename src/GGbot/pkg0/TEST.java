@@ -10,14 +10,13 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.types.Page;
 import com.restfb.types.User;
-
-public class FbAPI {
+public class TEST {
 	
 	public static void main(String[]args){
-		FacebookClient fbClient = new DefaultFacebookClient("CAAFVZA1bHOcsBAGfREZBOZBWhGpwpqVzrPxNJ4SLXiawbUCLZBoQhKOqpF9wXTWtsOslfHro6ZC5ZCcpZBgSpf2JDykAtQ6fCtn6mZCreMgNbccdYe9dFYoi1laUwcIM1Icj6eyPqLBr94mihPujDkxbgtsXYHHuS5mwsbeEvkZAQQ4GNDO6MejzJN2AntRq1h5PEzP7sePDTxwZDZD");
+		FacebookClient fbClient = new DefaultFacebookClient("CAACEdEose0cBALFtlPD0W8DPBNFoClnnr8bWSclmIvsCSTHAuUxrCwhOlegAA7UPxO8AWwMFOurjYddlAneVyZCPVgtvJ4vgjjc02IZA7GZC1FZB4f56G7Lhj1y6xylOfs0cbcptPrlPfSTr0aMY09GpI0EJjbRxTyx03hrE3MYSXZCprvItg4XlJT7twi1qZCoDlL8miRvAZDZD");
 		String toPrint="Info on this player:";
                 
-		Page me = fbClient.fetchObject("darth.vader",Page.class);
+		Page me = fbClient.fetchObject("digscarra",Page.class);
                
                try{
             if(me.getName()!=null)

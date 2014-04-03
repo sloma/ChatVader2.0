@@ -14,5 +14,19 @@ import java.util.Scanner;
  */
 public class WikiAPI {
     
+    public static void main (String[] args){
+        
+        
+        String[] listOfTitleStrings = { "Web service" };
+User user = new User("", "", "http://en.wikipedia.org/w/api.php");
+user.login();
+List<Page> listOfPages = user.queryContent(listOfTitleStrings);
+for (Page page : listOfPages) {
+  WikiModel wikiModel = new WikiModel("${image}", "${title}");
+  String html = wikiModel.render(page.toString());
+  System.out.println(html);
+}
+    }
+    
     }
 
