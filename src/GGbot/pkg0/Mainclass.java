@@ -22,7 +22,7 @@ public class Mainclass {
         
    String input="";
         
-   System.out.println("For more information please take a look at the Read Me\n");
+   System.out.println("Welcomet to GGbot\nFor more information please take a look at the Read Me\n");
    
    System.out.println("- Twitter: PlayerName   (flex, returns the latest tweets from a player)\n"+
    "- Facebook: PlayerName  (flex, returns all the information available about a player)\n"+
