@@ -6,8 +6,11 @@
 
 package GGbot.pkg0;
 
+import com.dropbox.core.DbxException;
+import java.io.IOException;
 import java.util.Scanner;
 import org.apache.commons.lang.WordUtils;
+import twitter4j.TwitterException;
 /**
  *
  * @author salimbouassida
@@ -15,14 +18,29 @@ import org.apache.commons.lang.WordUtils;
 public class Mainclass {
   
         
-    public static void main(String[] args) throws InterruptedException{
-    System.out.print("<User>");
-    Scanner scanner = new Scanner(System.in);
-    String username = scanner.nextLine();
-    Thread.sleep(500);
-    System.out.println(WordUtils.wrap("<GGbot>Information collected from Wikipedia:                     League of Legends (LoL) is a multiplayer online battle arena video game developed and published by Riot Games for Microsoft Windows[1] and Mac OS X, inspired by the mod Defense of the Ancients[2] for the video game Warcraft III: The Frozen Throne. ",61));
- 
-// FB info: Twitter: Scarra
+    public static void main(String[] args) throws InterruptedException, TwitterException, DbxException, IOException, Exception{
+        
+   String input="";
+        
+   System.out.println("For more information please take a look at the Read Me\n");
+   
+   System.out.println("- Twitter: PlayerName   (flex, returns the latest tweets from a player)\n"+
+   "- Facebook: PlayerName  (flex, returns all the information available about a player)\n"+
+   "- Note to self: Input   (notflex, create a new text document with your input, and put it in a drop box)\n"+
+   "- Translate: Input      (notflex, detects the language of your input and translate it to english)\n"+
+   "- Wiki                  (flex, returns the definition of league of legends from wikipedia\n"+
+   "- !Players:             (returns the list of the players available in the library (only players from the teams: Cloud9, CLG, and TSM are available at the moment))\n"+
+   "- !dropbox:             (returns the link to the dropbox)\n\n"+
+   "Start to chat now!\n");
+   while(!input.contains("bye")){
+       System.out.print("<User>");
+       Scanner scanner = new Scanner(System.in);
+         input = scanner.nextLine();
+         
+        String output= bot.Bot(input.toLowerCase().trim());
+       System.out.println("<GGbot>"+ WordUtils.wrap(output, 75));
+   }
+   
 
     }
 }

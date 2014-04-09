@@ -1,7 +1,12 @@
 package GGbot.pkg0;
-
+/*
+*The Brain of the bot
+*/
 
 import static GGbot.pkg0.bot.a;
+import com.dropbox.core.DbxException;
+import java.io.IOException;
+import twitter4j.TwitterException;
 public class bot {
     // Each variable is set at 1, then each time a method is called the variable 
     // increases by 1. When the variable reaches max, it is reset to 1;
@@ -15,7 +20,7 @@ public class bot {
     static String a="";
     static String look="";
     
-   public static String Bot(String input){
+   public static String Bot(String input) throws TwitterException, DbxException, IOException, Exception{
         
         // checks for which method to call first
         
@@ -23,6 +28,20 @@ public class bot {
 			return Hi(input);
                 else if(test(input,Synonym.insult))
                         return "no need to be rude..";
+                else if(input.startsWith("!player"))
+			return	player(input);
+                else if(input.startsWith("!drop"))
+			return	("https://www.dropbox.com/sh/6g9euw4kv2x13me/2SsenocW9r");
+                else if(input.contains("twit")|input.contains("tweet"))
+			return	twit(input);
+                else if(input.contains("face")|input.contains("fb"))
+			return	fb(input);
+                else if(input.contains("note"))
+                        return dropbox(input); 
+                else if(input.contains("trans"))
+			return	bing(input);
+                else if(input.contains("wiki"))
+			return	wiki();
 		else if(input.contains("where"))
 			return	Where(input);
 		else if(input.contains("how"))
@@ -278,6 +297,67 @@ private static String Bye(){
          return generic(input);
         else
 		return a;
+    }
+
+    private static String twit(String input) throws TwitterException {
+       boolean x=true;
+       
+  
+  for(int i =0; i < Library.Player.length; i++)
+  {  if(input.contains(Library.Player[i][0]))
+    { a=Library.Player[i][1] ;
+        x= false;}
+        }
+         
+        if(x)
+         return TweetAPI.tweet(input);
+        else
+		return TweetAPI.tweet(a);
+    }
+
+    private static String fb(String input) {
+ boolean x=true;
+       
+  
+  for(int i =0; i < Library.Player.length; i++)
+  {  if(input.contains(Library.Player[i][0]))
+    { a=Library.Player[i][2] ;
+        x= false;}
+        }
+         
+        if(x)
+         return FbAPI.Fb(input);
+        else
+		return FbAPI.Fb(a);    }
+
+    private static String  dropbox(String input) throws DbxException, IOException {
+  
+        
+        String a=input.substring(13);
+        DropBoxAPI.Drop(a);
+      String  a1="Uploaded: The file was sucessfuly uploaded to the dropbox.";
+        return a1;
+        
+    }
+
+    private static String bing(String input) throws Exception {
+String a=input.substring(10);
+    String  a1=  Bingtrans.Trans(a);
+      
+        return a1;    }
+
+
+    private static String player(String input) {
+        String a ="";
+        for (int i=0; i<Library.Player.length;i++){
+            a+=Library.Player[i][0]+", ";
+        }
+        return a;
+    }
+
+    private static String wiki() throws IOException {
+      a=WikiAPI.wiki();
+      return a;
     }
 
     

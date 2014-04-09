@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Facebook
  */
 
 package GGbot.pkg0;
@@ -9,33 +7,36 @@ package GGbot.pkg0;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.types.Page;
-import com.restfb.types.User;
+
 
 public class FbAPI {
 	
-	public static void main(String[]args){
-		FacebookClient fbClient = new DefaultFacebookClient("CAAFVZA1bHOcsBAGfREZBOZBWhGpwpqVzrPxNJ4SLXiawbUCLZBoQhKOqpF9wXTWtsOslfHro6ZC5ZCcpZBgSpf2JDykAtQ6fCtn6mZCreMgNbccdYe9dFYoi1laUwcIM1Icj6eyPqLBr94mihPujDkxbgtsXYHHuS5mwsbeEvkZAQQ4GNDO6MejzJN2AntRq1h5PEzP7sePDTxwZDZD");
-		String toPrint="Info on this player:";
+	public static String Fb(String Player){
+                String toprint="The information found about this player:\n";
                 
-		Page me = fbClient.fetchObject("darth.vader",Page.class);
+                //Start connection
+		FacebookClient fbClient = new DefaultFacebookClient();
+	
+                //get information if found
+		Page profile = fbClient.fetchObject(Player,Page.class);
                
                try{
-            if(me.getName()!=null)
-                    toPrint=toPrint+"\n-Name: "+me.getName();
-            if(me.getDescription()!=null)
-                    toPrint=toPrint+"\n-Description: "+me.getDescription();
-            if(me.getLikes()!=null)
-                    toPrint=toPrint+"\n-Likes: "+me.getLikes();
-            if(me.getAbout()!=null)
-                    toPrint=toPrint+"\n-About: "+me.getAbout();
-            if(me.getType()!=null)
-                    toPrint=toPrint+"\n-Type: "+me.getType();
-            if(me.getGeneralInfo()!=null)
-                    toPrint=toPrint+"\n-general: "+me.getGeneralInfo();
+            if(profile.getName()!=null)
+                    toprint=toprint+"\n-Name: "+profile.getName();
+            if(profile.getDescription()!=null)
+                    toprint=toprint+"\n-Description: "+profile.getDescription();
+            if(profile.getLikes()!=null)
+                    toprint=toprint+"\n-Likes: "+profile.getLikes();
+            if(profile.getAbout()!=null)
+                    toprint=toprint+"\n-About: "+profile.getAbout();
+            if(profile.getType()!=null)
+                    toprint=toprint+"\n-Type: "+profile.getType();
+            if(profile.getGeneralInfo()!=null)
+                    toprint=toprint+"\n-general: "+profile.getGeneralInfo();
           
-        }catch(Exception e){toPrint="User not found";}
+        }catch(Exception e){toprint="User not found";}
                
-               System.out.println(toPrint);
+               return toprint;
 		
 	}
 }

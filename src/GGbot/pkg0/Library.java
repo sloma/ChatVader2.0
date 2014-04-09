@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Library
  */
 
 package GGbot.pkg0;
@@ -92,4 +90,9 @@ public class Library {
     static String[][] howdef={{"old",old},{"are you",you},{"jungl",jungler},{"counter",counter},{"build",howbuild},{"win",carry},{"supp",supp},{"cs",csgoal},{"gan",gank},{"carry",carry},{"lan",lanin},{"get",carry},{"better",better},{"lose",howlose}};
     static String[][] whendef={{"push",push},{"gan",whengank},{"reset",reset},{"world",world},{"baron",whenbaron},{"respaw",respawn},{"born",old}};
     static String[][] whodef={{"counter",counter},{"season",season}};
-            }
+    static String[][] Player={{"balls","C9Balls","Balislol"},{"meteos","meteoslol","meteoslol"},{"hai","Hai_L9","HaiL92"},{"seaky","C9Sneaky","C9Sneaky"},{"lemonnation","LemonnNation","LemonNationLol"},
+                               {"nien","CLG_Nien","CounterLogicGaming"},{"dexter","CLG_dexter","dexter1lol"},{"link","CLG_Link","ClgLink"},{"doublelift","CLGDoublelift","CLGDoublelift"},{"aphromoo","aphromoo","FearAphromoo"},
+                               {"dyrus","LoLDyrus","TSMDYRUSLOL"},{"theoddone","TSMTheOddOne","TSMTheOddOne"},{"bjergsen","Bjergsen","BjergsenLoL"},{"wildturtle","TSMWildTurtle","WILDTURTLEX"},{"xpecial","TSMXpecial","TSMXpecial"}};
+}
+
+

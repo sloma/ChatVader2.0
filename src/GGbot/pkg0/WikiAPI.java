@@ -1,32 +1,40 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Wikipedia
  */
 
 package GGbot.pkg0;
 
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.apache.commons.lang.WordUtils;
+import org.wikipedia.Wiki;
 
-/**
- *
- * @author salimbouassida
- */
 public class WikiAPI {
     
-    public static void main (String[] args){
+    public static String wiki() throws IOException{
+        //connect to the wikipage
+      Wiki  wiki = new Wiki("en.wikipedia.org"); 
+      wiki.setThrottle(5000); 
+   //get info on a page 
+      String info=(wiki.getSectionText("League_of_Legends",1)).substring(0, 471);
+     //Removes all the URL links fromt the text
+      String output=info;
+        String urlPattern = "((https?|ftp|gopher|telnet|file|Unsure|http):((//)|(\\\\))+[--><\\w\\d:#@%/;$()~_?\\+-=\\\\\\.&]*)";
+        Pattern p = Pattern.compile(urlPattern,Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(output);
+        int i=0;
+        while (m.find()) {
+            output=output.replaceAll(m.group(i),"").trim();
+            i++;
+        }
         
-        
-        String[] listOfTitleStrings = { "Web service" };
-User user = new User("", "", "http://en.wikipedia.org/w/api.php");
-user.login();
-List<Page> listOfPages = user.queryContent(listOfTitleStrings);
-for (Page page : listOfPages) {
-  WikiModel wikiModel = new WikiModel("${image}", "${title}");
-  String html = wikiModel.render(page.toString());
-  System.out.println(html);
-}
+      
+      
+    String   a="Information I was able to get from wikipedia:\n"+output;
+    return a;
     }
     
-    }
+    } 
+
 
