@@ -24,11 +24,7 @@ public class bot {
         
         // checks for which method to call first
         
-		if(test(input,Synonym.hello))
-			return Hi(input);
-                else if(test(input,Synonym.insult))
-                        return "no need to be rude..";
-                else if(input.startsWith("!player"))
+                 if(input.startsWith("!player"))
 			return	player(input);
                 else if(input.startsWith("!drop"))
 			return	("https://www.dropbox.com/sh/6g9euw4kv2x13me/2SsenocW9r");
@@ -42,6 +38,10 @@ public class bot {
 			return	bing(input);
                 else if(input.contains("wiki"))
 			return	wiki();
+                else if(test(input,Synonym.hello))
+			return Hi(input);
+                else if(test(input,Synonym.insult))
+                        return "no need to be rude..";
 		else if(input.contains("where"))
 			return	Where(input);
 		else if(input.contains("how"))
